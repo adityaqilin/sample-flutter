@@ -1,3 +1,4 @@
+import 'dart:html' as html;
 import 'package:flutter/material.dart';
 
 void main() {
@@ -35,6 +36,7 @@ class MyHomePage extends StatelessWidget {
             SizedBox(height: 20), // Adds some space between the text and the button
             ElevatedButton(
               onPressed: () {
+                _trackEvent('ButtonClick', {'button': 'Click Me'});
                 print('Button clicked!');
               },
               child: Text('Click Me'),
@@ -43,5 +45,10 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _trackEvent(String event, [Map<String, dynamic>? parameters]) {
+    final params = parameters ?? {};
+    html.window.callMethod('fbq', ['track', event, params]);
   }
 }
