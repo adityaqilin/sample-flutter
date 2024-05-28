@@ -1,9 +1,12 @@
-import 'dart:html' as html;
 import 'package:flutter/material.dart';
+import 'package:js/js.dart';
 
 void main() {
   runApp(MyApp());
 }
+
+@JS('fbq')
+external void fbq(String method, String event, [dynamic parameters]);
 
 class MyApp extends StatelessWidget {
   @override
@@ -48,7 +51,6 @@ class MyHomePage extends StatelessWidget {
   }
 
   void _trackEvent(String event, [Map<String, dynamic>? parameters]) {
-    final params = parameters ?? {};
-    html.window.callMethod('fbq', ['track', event, params]);
+    fbq('track', event, parameters ?? {});
   }
 }
