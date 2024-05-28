@@ -55292,7 +55292,7 @@ R(a){var s=null,r=A.a2t("Hello World Web",s)
 return new A.ru(new A.oo(r,new A.Gz(s,s,1/0,56),s),A.KZ(A.acM(A.b([A.a2t("Hello, World!",A.mZ(s,s,s,s,s,s,s,s,s,s,s,24,s,s,s,s,s,!0,s,s,s,s,s,s,s,s)),A.TQ(s,20,s),new A.xO(new A.Qz(this),s,s,s,s,s,s,!1,s,A.a2t("Click Me",s),s)],t.nA),B.o5),s,s),s)}}
 A.Qz.prototype={
 $0(){var s=A.aI(["button","Click Me"],t.N,t.z)
-self.fbq("track","ButtonClick",s)
+self.fbq("trackCustom","ButtonClick",s)
 A.vV("Button clicked!")},
 $S:0}
 A.b8.prototype={
